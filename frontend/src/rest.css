@@ -1,0 +1,93 @@
+/* reset.css */
+
+/* Box sizing para todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens e paddings padrão */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove estilos de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove estilos de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove estilos de imagens */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove bordas de elementos interativos */
+button,
+input,
+select,
+textarea {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove outline padrão e define foco visível */
+:focus {
+  outline: 2px solid #007BFF;
+  outline-offset: 2px;
+}
+
+/* Define altura mínima e fonte base */
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Suaviza fontes */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove estilos de tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
