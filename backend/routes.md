@@ -1,6 +1,6 @@
 # 📘 Documentação de Rotas da API
 
-Todas as rotas têm como base `http://localhost:3000/api`.
+Todas as rotas têm como base `http://localhost:3000`.
 
 ---
 
