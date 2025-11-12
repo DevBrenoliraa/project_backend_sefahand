@@ -86,6 +86,8 @@ const PageCadastro = () => {
           onChange={(e) => setSenha(e.target.value)}
           required
           className="input_cadastro"
+          minLength={6}
+          max={12}
         />
 
         <input
@@ -95,6 +97,8 @@ const PageCadastro = () => {
           onChange={(e) => setVerificaSenha(e.target.value)}
           required
           className="input_cadastro"
+          minLength={6}
+          max={12}
         />
 
         <button type="submit" className="btn_cadastro">Cadastrar</button>
