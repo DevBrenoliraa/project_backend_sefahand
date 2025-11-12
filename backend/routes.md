@@ -17,8 +17,8 @@ Todas as rotas têm como base `http://localhost:3000`.
 
 | Método | Rota                  | Descrição                        | Middleware         |
 |--------|-----------------------|----------------------------------|--------------------|
-| GET    | /api/epis             | Lista todos os funcionários      | verificarToken     |
-| POST   | /api/epis/cadastro    | Cadastra um novo funcionário     | verificarToken     |
+| GET    | /api/funcionarios             | Lista todos os funcionários      | verificarToken     |
+| POST   | /api/funcionarios/cadastro    | Cadastra um novo funcionário     | verificarToken     |
 
 > ⚠️ Observação: As rotas de funcionários estão misturadas com `/epis`. Pode ser interessante separar em `/funcionarios` para maior clareza.
 
