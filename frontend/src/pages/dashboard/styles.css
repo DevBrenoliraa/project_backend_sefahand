@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* --- Scroll geral da página --- */
+html, body {
+    height: 113%;
+    overflow-y: auto; /* permite rolar para baixo */
+}
+
+body {
+    margin-top: 80px;
+    margin-left: 7%;
+    font-family: "Poppins", sans-serif;
+}
+
+div {
+    font-family: "Poppins", sans-serif;
+}
+
+.title-aviso {
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    font-weight: 700;
+    width: 90px;
+    color: rgba(255, 167, 0, 1);
+    margin-bottom: 10px;
+}
+
+.title-text {
+    font-size: medium;
+    font-weight: 500;
+}
+
+.bg-aviso {
+    width: 320px;
+    background-color: rgba(255, 224, 165, 1);
+    padding: 25px;
+    margin-top: 9%;
+    border-radius: 10px;
+}
+
+.card-funcionarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(30, 41, 59, 1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    margin-top: 8%;
+}
+
+.card-funcionarios p {
+    width: 0px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 90%;
+}
+
+.card-funcionarios img {
+    margin-right: -160px;
+}
+
+.card-funcionarios h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.card-epis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(30, 41, 59, 1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    margin-top: 3%;
+}
+
+.card-epis p {
+    width: 0px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 90%;
+}
+
+.card-epis img {
+    margin-right: -160px;
+}
+
+.card-epis h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
