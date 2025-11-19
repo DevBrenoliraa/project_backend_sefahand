@@ -104,7 +104,7 @@ const PageCadastro = () => {
         <button type="submit" className="btn_cadastro">Cadastrar</button>
       </form>
 
-      <Link className="link_login" to="/usuario/login">
+      <Link className="link_login" to="/">
         Já tem uma conta? Fazer login
       </Link>
     </div>
