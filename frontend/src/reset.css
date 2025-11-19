@@ -80,6 +80,7 @@ body {
   line-height: 1.5;
   background-color: #fff;
   color: #000;
+  background-color: #f0f2f5;
 }
 
 /* Suaviza fontes */
@@ -98,8 +99,8 @@ table {
 html,
 body {
   width: 375px;
-  height: 812px;
-  overflow: hidden; /* Impede rolagem */
+  height: 100vh;
+  overflow: hidden;
   margin: 0 auto;   /* Centraliza no navegador */
   display: flex;
   flex-direction: column;
