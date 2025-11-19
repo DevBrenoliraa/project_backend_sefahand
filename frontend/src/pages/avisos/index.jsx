@@ -1,4 +1,4 @@
-import './style.css';
+import './styles.css';
 import React, { useState, useEffect } from 'react';
 import atencao from '../../assets/svg/atencao.svg'
 import caminhao from '../../assets/svg/caminhao.svg'

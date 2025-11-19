@@ -1,0 +1,84 @@
+.estoque-epi {
+    background-color: #ffffff;
+    width: 320px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 22px;
+}
+
+.text-epi {
+    font-size: 10px;
+}
+
+.text-epi h1 {
+    margin-bottom: 10px;
+}
+
+.text-lote {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-lote button {
+    background-color: rgba(217, 217, 217, 1);
+    width: 60px;
+    border-radius: 60px;
+}
+
+.title-epi {
+    display: flex;
+    justify-content: space-between;
+    width: 145px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.box-epi {
+    border-color: rgba(217, 217, 217, 1);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+  
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.carousel-content {
+    flex: 1;
+    margin: 0 20px;
+}
+ 
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+  
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.indicator.active {
+    background: #007bff;
+}
+  
+.box-epi {
+    transition: transform 0.3s ease;
+}
