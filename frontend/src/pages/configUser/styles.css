@@ -1,0 +1,132 @@
+.config-user-page {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.config-user {
+  min-height: 100vh;
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.config-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.config-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.config-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.config-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.config-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.config-email {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.config-section-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.config-item:last-child {
+  border-bottom: none;
+}
+
+.config-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.config-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.config-arrow {
+  font-size: 20px;
+  color: #94a3b8;
+}
+
+.config-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: #cbd5f5;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.config-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+}
+
+.config-switch.active {
+  background: #2563eb;
+}
+
+.config-switch.active::after {
+  transform: translateX(20px);
+}
+
+@media (max-width: 480px) {
+  .config-card {
+    padding: 24px 18px;
+  }
+
+  .config-item {
+    padding: 12px 0;
+  }
+}

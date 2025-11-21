@@ -31,7 +31,7 @@ export const criarfuncionario = async (req, res, next) => {
             });
         };
 
-        const existe = await usuarioModel.findOne({ where: { cpf } });
+        const existe = await funcionarioModel.findOne({ where: { cpf } });
 
         if (existe) {
             return res.status(422).json({
@@ -41,7 +41,7 @@ export const criarfuncionario = async (req, res, next) => {
             });
         };
 
-        const novofuncionario = await usuarioModel.create({
+        const novofuncionario = await funcionarioModel.create({
             nome_completo,
             cpf,
             cargo,
