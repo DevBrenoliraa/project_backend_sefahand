@@ -31,7 +31,7 @@ const PageLogin = () => {
                 setSenha('')
 
                 setTimeout(() => {
-                    // navigate('/usuario/login');
+                    navigate('/homepage');
                 }, 1000);
 
             } else {
@@ -66,7 +66,7 @@ const PageLogin = () => {
                     className="input_login"
                 />
 
-                <button type="submit" className="btn_login">Entrar</button>
+                <button type="submit" className="btn_login"><Link to=''>Entrar</Link></button>
             </form>
 
             <Link className="link_criar_conta" to="/usuario/cadastro">

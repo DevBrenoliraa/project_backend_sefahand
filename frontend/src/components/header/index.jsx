@@ -29,10 +29,10 @@ const ComponentHeader = () => {
 
                 <ul className={`menu_lateral ${menuOpen ? 'ativo' : ''}`}>
                     <li>
-                        <Link to="" onClick={handleLinkClick}>Avisos</Link>
+                        <Link to="/usuario/avisos" onClick={handleLinkClick}>Avisos</Link>
                     </li>
                     <li>
-                        <Link to="" onClick={handleLinkClick}>Configurações</Link>
+                        <Link to="/usuario/configUser" onClick={handleLinkClick}>Configurações</Link>
                     </li>
                 </ul>
             </nav>

@@ -1,11 +1,12 @@
 import './styles.css';
 import React, { useState, useEffect } from 'react';
+
 import atencao from '../../assets/svg/atencao.svg'
 import caminhao from '../../assets/svg/caminhao.svg'
 import verificado from '../../assets/svg/verificado.svg'
 import info from '../../assets/svg/info.svg'
 import ComponentFooter from '../../components/footer/index'
-
+import ComponentHeader from '../../components/header'
 
 const AvisoItem = ({ tipo, titulo, mensagem, hora, lido }) => {
     let icon, iconColorClass;
@@ -49,7 +50,27 @@ const AvisoItem = ({ tipo, titulo, mensagem, hora, lido }) => {
     );
 };
 
+const ToggleSwitch = ({ checked, onToggle }) => (
+    <div
+        className={`avisos-switch ${checked ? 'active' : ''}`}
+        onClick={onToggle}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onToggle();
+            }
+        }}
+    ></div>
+);
+
 const Avisos = ({ avisosData = [] }) => {
+
+    useEffect(() => {
+        document.body.classList.add('avisos-page');
+        return () => document.body.classList.remove('avisos-page');
+    }, []);
 
     const [marcarComoLido, setMarcarComoLido] = useState(false);
 
@@ -61,47 +82,46 @@ const Avisos = ({ avisosData = [] }) => {
     }, {});
 
     return (
-        <div className="avisosContainer">
+        <>
+            <ComponentHeader />
+            <div className="avisosContainer">
 
-            <div className="header">
-                <h1 className="title">Central de Avisos</h1>
-            </div>
+                <div className="header">
+                    <h1 className="title">Central de Avisos</h1>
+                </div>
 
-            <div className="readStatusToggle">
-                <span>Marcar como lido</span>
-                <label className="switch">
-                    <input
-                        type="checkbox"
+                <div className="readStatusToggle">
+                    <span>Marcar como lido</span>
+                    <ToggleSwitch
                         checked={marcarComoLido}
-                        onChange={() => setMarcarComoLido(!marcarComoLido)}
+                        onToggle={() => setMarcarComoLido(!marcarComoLido)}
                     />
-                    <span className="slider round"></span>
-                </label>
-            </div>
+                </div>
 
-            <div className="avisoListWrapper">
-                {Object.entries(avisosAgrupados).map(([grupo, avisosDoGrupo]) => (
-                    <div key={grupo} className="avisoGroup">
-                        <h2 className="groupTitle">{grupo}</h2>
+                <div className="avisoListWrapper">
+                    {Object.entries(avisosAgrupados).map(([grupo, avisosDoGrupo]) => (
+                        <div key={grupo} className="avisoGroup">
+                            <h2 className="groupTitle">{grupo}</h2>
 
-                        {avisosDoGrupo.map((aviso, index) => (
-                            <AvisoItem
-                                key={index}
-                                tipo={aviso.tipo}
-                                titulo={aviso.titulo}
-                                mensagem={aviso.mensagem}
-                                hora={aviso.hora}
-                                lido={marcarComoLido || aviso.lidoInicialmente}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
+                            {avisosDoGrupo.map((aviso, index) => (
+                                <AvisoItem
+                                    key={index}
+                                    tipo={aviso.tipo}
+                                    titulo={aviso.titulo}
+                                    mensagem={aviso.mensagem}
+                                    hora={aviso.hora}
+                                    lido={marcarComoLido || aviso.lidoInicialmente}
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </div>
 
-            <div className="bottomNavbar">
-                <ComponentFooter />
+                <div className="bottomNavbar">
+                    <ComponentFooter />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
@@ -109,57 +129,58 @@ const Avisos = ({ avisosData = [] }) => {
 
 
 const avisosMock = [
-  {
-    tipo: 'envio',
-    titulo: 'Pedido #1234 enviado',
-    mensagem: 'Seu pedido foi enviado.',
-    hora: '10:30',
-    grupo: 'Hoje',
-    lidoInicialmente: false
-  },
-  {
-    tipo: 'confirmacao',
-    titulo: 'Confirmação de concluída',
-    mensagem: 'Confirme o recebimento do seu último pedido',
-    hora: '09:15',
-    grupo: 'Hoje',
-    lidoInicialmente: false
-  },
-  {
-    tipo: 'entrega',
-    titulo: 'Entrega #1234 realizada',
-    mensagem: 'Seu pedido foi entregue.',
-    hora: '16:20',
-    grupo: 'Semana Passada',
-    lidoInicialmente: false
-  },
-  {
-    tipo: 'alerta',
-    titulo: 'Problema na entrega',
-    mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
-    hora: 'Ontem, 17:45',
-    grupo: 'Semana Passada',
-    lidoInicialmente: false
-  }
-  ,
-  {
-    tipo: 'alerta',
-    titulo: 'Problema na entrega',
-    mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
-    hora: 'Ontem, 17:45',
-    grupo: 'Semana Passada',
-    lidoInicialmente: false
-  }
-  ,
-  {
-    tipo: 'alerta',
-    titulo: 'Problema na entrega',
-    mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
-    hora: 'Ontem, 17:45',
-    grupo: 'Semana Passada',
-    lidoInicialmente: false
-  }
+    {
+        tipo: 'envio',
+        titulo: 'Pedido #1234 enviado',
+        mensagem: 'Seu pedido foi enviado.',
+        hora: '10:30',
+        grupo: 'Hoje',
+        lidoInicialmente: false
+    },
+    {
+        tipo: 'confirmacao',
+        titulo: 'Confirmação de concluída',
+        mensagem: 'Confirme o recebimento do seu último pedido',
+        hora: '09:15',
+        grupo: 'Hoje',
+        lidoInicialmente: false
+    },
+    {
+        tipo: 'entrega',
+        titulo: 'Entrega #1234 realizada',
+        mensagem: 'Seu pedido foi entregue.',
+        hora: '16:20',
+        grupo: 'Semana Passada',
+        lidoInicialmente: false
+    },
+    {
+        tipo: 'alerta',
+        titulo: 'Problema na entrega',
+        mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
+        hora: 'Ontem, 17:45',
+        grupo: 'Semana Passada',
+        lidoInicialmente: false
+    }
+    ,
+    {
+        tipo: 'alerta',
+        titulo: 'Problema na entrega',
+        mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
+        hora: 'Ontem, 17:45',
+        grupo: 'Semana Passada',
+        lidoInicialmente: false
+    }
+    ,
+    {
+        tipo: 'alerta',
+        titulo: 'Problema na entrega',
+        mensagem: 'Não foi possível entregar o pedido #5678. Tente reagendar.',
+        hora: 'Ontem, 17:45',
+        grupo: 'Semana Passada',
+        lidoInicialmente: false
+    }
 ];
+
 // Renderiza o componente usando o mock
 export default function TesteAvisos() {
   return <Avisos avisosData={avisosMock} />;

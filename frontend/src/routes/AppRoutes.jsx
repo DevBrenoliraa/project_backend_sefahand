@@ -2,7 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PageCadastro from '../pages/cadastro'
 import PageLogin from '../pages/login'
 import Avisos from '../pages/avisos'
-// import { Link } from 'react-router-dom'
+import Dashboard from '../pages/dashboard'
+import ConfigUser from '../pages/configUser'
+import DeliveriesPage from '../pages/entregas'
 
 const AppRoutes = () => {
   return (
@@ -11,6 +13,12 @@ const AppRoutes = () => {
         <Route path='/' element={<PageLogin />} />
         <Route path='/usuario/cadastro' element={<PageCadastro />} />
         <Route path='/usuario/avisos' element={<Avisos />} />
+        <Route path='/usuario/cadastro' element={<PageCadastro/>} />
+        <Route path='/usuario/login' element={<PageLogin/>} />
+        <Route path='/usuario/avisos' element={<Avisos/>} />
+        <Route path='/usuario/configUser' element={<ConfigUser/>} />
+        <Route path='/usuario/entregas' element={<DeliveriesPage/>} />
+        <Route path='/homepage' element={<Dashboard/>} />
       </Routes>
     </BrowserRouter>
   )
