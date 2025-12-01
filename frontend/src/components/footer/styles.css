@@ -1,3 +1,17 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteúdo principal da página */
+.conteudo {
+  min-height: 100vh;
+  padding-bottom: 76px; /* reserva espaço para o footer */
+  box-sizing: border-box;
+}
+
+/* Footer fixo */
 .container_footer {
   position: fixed;
   bottom: 0;
@@ -10,10 +24,12 @@
   z-index: 100;
 }
 
+/* Ícones dentro do footer */
 .footer_icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 }
 
 .footer_icons a {
@@ -21,6 +37,8 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer_icons a img {
@@ -28,5 +46,5 @@
 }
 
 .footer_icons a:hover img {
-  transform: scale(1.1);    
+  transform: scale(1.1);
 }

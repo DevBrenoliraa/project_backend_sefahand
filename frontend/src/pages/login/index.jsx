@@ -5,10 +5,10 @@ import { useState } from 'react'
 import logo_safehand from '../../assets/svg/logo_safehand.svg';
 
 const PageLogin = () => {
+    const navigate = useNavigate();   // ✅ instanciando o hook
 
     const [nickname, setNickname] = useState('');
     const [senha, setSenha] = useState('');
-
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -23,16 +23,14 @@ const PageLogin = () => {
             const data = await res.json();
 
             if (res.ok && data.token) {
-                // Salva o token no localStorage
                 localStorage.setItem('token', data.token);
                 alert('Login realizado com sucesso!');
 
-                setNickname('')
-                setSenha('')
+                setNickname('');
+                setSenha('');
 
-                setTimeout(() => {
-                    navigate('/homepage');
-                }, 1000);
+                // ✅ redireciona para /safehand/home
+                navigate('/safehand/home');
 
             } else {
                 alert('Erro: ' + (data.message || 'Falha no login.'));
@@ -43,6 +41,7 @@ const PageLogin = () => {
             alert('Erro de conexão com o servidor.');
         }
     };
+
     return (
         <div className="login_container">
             <img src={logo_safehand} alt="Logo SafeHand" className="logo_login" />
@@ -66,15 +65,14 @@ const PageLogin = () => {
                     className="input_login"
                 />
 
-                <button type="submit" className="btn_login"><Link to=''>Entrar</Link></button>
+                <button type="submit" className="btn_login">Entrar</button>
             </form>
 
             <Link className="link_criar_conta" to="/usuario/cadastro">
                 Não tem uma conta? Cadastre-se
             </Link>
         </div>
-
     )
 }
 
-export default PageLogin
+export default PageLogin;
