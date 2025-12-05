@@ -4,7 +4,7 @@ import { listarFuncionarios, criarfuncionario } from '../controllers/funcionario
 
 const routes = Router();
 
-routes.get('/funcionarios', verificarToken, listarFuncionarios)
-routes.post('/funcionario/cadastros', verificarToken, criarfuncionario);
+routes.get('/funcionarios', listarFuncionarios)
+routes.post('/funcionario/cadastros', criarfuncionario);
 
 export default routes;
