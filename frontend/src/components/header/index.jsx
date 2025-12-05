@@ -18,7 +18,7 @@ const ComponentHeader = () => {
 
     return (
         <header className="container_header">
-            <img src={logo_safehand} alt="logo SafeHand" className='logo_header' />
+            <Link to='/safehand/home'><img src={logo_safehand} alt="logo SafeHand" className='logo_header' /></Link>
 
             <nav className="navbar">
                 <FontAwesomeIcon

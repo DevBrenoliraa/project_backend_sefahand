@@ -4,6 +4,9 @@ import ComponentHeader from "../../components/header/index";
 import ComponentFooter from "../../components/footer";
 import EpiCarousel from "../../components/carousel";
 
+import iconAviso from '../../assets/svg/iconAviso.svg'
+import iconUsers from '../../assets/svg/iconUsers.svg'
+import iconEpis from '../../assets/svg/iconEPIcard.svg'
 const Dashboard = () => {
     return (
         <>
@@ -11,7 +14,7 @@ const Dashboard = () => {
         <div className='home'>
             <div className="bg-aviso">
                 <div className='title-aviso'>
-                    <img src='./src/assets/svg/iconAviso.svg'/>
+                    <img src={iconAviso}/>
                     <p>AVISO!</p>
                 </div>
                 <div className="title-text">
@@ -27,7 +30,7 @@ const Dashboard = () => {
                     <p>
                         Funcionários Cadastrados
                     </p>
-                    <img src="./src/assets/svg/iconUsers.svg"/>
+                    <img src={iconUsers}/>
                     <h1>
                         23
                     </h1>
@@ -37,7 +40,7 @@ const Dashboard = () => {
                     <p>
                         EPIs Cadastrados
                     </p>
-                    <img src="./src/assets/svg/iconEPIcard.svg"/>
+                    <img src={iconEpis}/>
                     <h1>
                         26
                     </h1>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './styles.css'
 
+import box from '../../assets/svg/iconBox.svg'
+
 const EpiCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -44,7 +46,7 @@ const EpiCarousel = () => {
   return (
     <div className="estoque-epi">
       <div className="title-epi">
-        <img src="./src/assets/svg/iconBox.svg" alt="Ícone estoque"/>
+        <img src={box} alt="Ícone estoque"/>
         <p>Estoque de EPI</p>
       </div>
       
